@@ -6,3 +6,9 @@ ScrollSmoother.create({
 	wrapper: '.wrapper',
 	content: '.content'
 })
+
+const image = document.getElementById('image-container');
+
+image.addEventListener('click', () => {
+  window.location.href = 'https://example.com';
+});

@@ -127,3 +127,27 @@ body {
 	font-size: calc(var(--index) * .75);
 	letter-spacing: calc(var(--index) / 37.5);
 }
+#image-container {
+  position: absolute;
+  z-index: -1;
+  animation: slide 15s linear infinite;
+  
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(200%) translateY(200px);
+  }
+  to {
+    transform: translateX(-170%) translateY(200px);
+  }
+}
+
+#image-container:hover {
+  cursor: pointer;
+}
+
+#image-container img {
+  display: block;
+  width: 100%;
+}`
