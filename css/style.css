@@ -1,0 +1,386 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+	--text: #e7e7e0;
+	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+@font-face {
+	font-family: raleway_f;
+	src: url(../fonts/raleway-regular.woff2);
+}
+@font-face {
+	font-family: raleway_f;
+	src: url(../fonts/raleway-black.woff2);
+	font-weight: 900;
+}
+body {
+	background-color: #010101;
+	font-family: raleway_f, sans-serif;
+	line-height: 1.55;
+}
+.main-header {
+	position: relative;
+}
+.main-header::after {
+	content: '';
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	height: calc(var(--index) * 10);
+	background-image: url(../img/ground.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	bottom: calc(var(--index) * -4.5);
+}
+.layers {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+.layer {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-size: cover;
+	background-position: center;
+	will-change: transform;
+	z-index: 2;
+	transition: var(--transition);
+}
+.layers__base {
+	transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+	z-index: 0;
+}
+.layers__middle {
+	transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+.layers__front {
+	transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+}
+.layer__header {
+	z-index: 1;
+	transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+	transition: var(--transition);
+	will-change: transform;
+	text-transform: uppercase;
+	font-weight: 900;
+	color: var(--text);
+	text-shadow: 0 0 15px #9d822b;
+}
+.layers__title {
+	font-size: calc(var(--index) * 2.65);
+	letter-spacing: calc(var(--index) / 2.25);
+	margin-top: calc(var(--index) * -5.25);
+}
+.layers__caption {
+	font-size: calc(var(--index) / 1.175);
+	letter-spacing: calc(var(--index) / 3.5);
+	margin-top: calc(var(--index) * -0.75);
+}
+.main-article {
+  --main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  color: var(--text);
+  display: flex;
+  /* Updated: */
+  align-items: flex-start;
+  position: relative;
+  text-align: center;
+  /* Update: */
+  top: -1px;
+  z-index: 10;
+}
+
+.main-article3 {
+  --main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  color: var(--text);
+  display: flex;
+  /* Updated: */
+  align-items: flex-start;
+  position: relative;
+  text-align: center;
+  /* Update: */
+  top: -1px;
+  z-index: 10;
+}
+
+.main-article__header {
+	text-transform: uppercase;
+	font-size: calc(var(--index) * 1.8);
+	letter-spacing: calc(var(--index) / 7.5);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+}
+.main-article__paragraph {
+	max-width: calc(var(--index) * 30);
+	font-size: calc(var(--index) * .9);
+	margin-top: calc(var(--index) / 1.25);
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+}
+.content {
+	will-change: transform;
+}
+.copy {
+	position: absolute;
+	bottom: calc(var(--index) * 2.5);
+	opacity: 1;
+	font-size: calc(var(--index) * .75);
+	letter-spacing: calc(var(--index) / 37.5);
+}
+.img {
+  --main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+  position: absolute;
+  width: 600px;
+  height: 800px;
+  float: right;
+  bottom: 0;
+  right: 50px;
+  z-index: 2;
+  opacity: 0;
+  animation: slide-in 1s ease-in-out forwards;
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.img2 {
+  position: relative;
+  width: 48px; 
+  height: 48px;
+  float: center;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+.main-article__content {
+  position: absolute;
+  float: center;
+  top: 250px;
+  left: 150px;
+  z-index: 2;
+}
+.main-article__content2 {
+  position: absolute;
+  float: left;
+  top: 550px;
+  left: 150px;
+  z-index: 2;
+}
+.main-article__content2 p{
+  text-transform: uppercase;
+  font-size: calc(var(--index) * 0.8);
+  letter-spacing: calc(var(--index) / 7.5);
+  transform: var(--main-article-transform);
+  transition: var(--transition);
+  will-change: transform;
+}
+
+.main-article2 {
+  --main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  color: var(--text);
+  display: flex;
+  /* Updated: */
+  align-items: center;
+  position: relative;
+  text-align: center;
+  /* Update: */
+  top: -1px;
+  z-index: 10;
+}
+
+.main-article__content3 {
+  position: absolute;
+  float: left;
+  top: 120px;
+  left: 5px;
+  z-index: 2;
+  width: 50%;
+}
+.main-article__content3 p{
+  text-transform: uppercase;
+  font-size: calc(var(--index) * 0.8);
+  letter-spacing: calc(var(--index) / 7.5);
+  transform: var(--main-article-transform);
+  transition: var(--transition);
+  will-change: transform;
+}
+
+.block1 {
+  display: inline-block; /* или можно использовать float: left; */
+  width: 50%; /* задаем ширину блока */
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+
+.block2 {
+  display: inline-block; /* или можно использовать float: right; */
+  width: 50%; /* задаем ширину блока */
+  text-align: center;
+  border: 1px solid #000; /* задаем границу толщиной 1 пиксель и цвет */
+  border-radius: 20px; /* задаем радиус закругления границы */
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 75px;
+  padding-right: 0;
+  /* задаем внутренний отступ */
+  margin: 30px; /* задаем внешний отступ */
+  color: DimGray;
+  font-size: 25px;
+  position: relative;
+  align-items: center;
+  
+} 
+
+.block2 p{
+  position: relative;
+  color: DimGray;
+  float: left;
+  top: 5 px;
+  font-size: 20px;
+  width: 100%;
+  left: 0;
+} 
+.block2 h2{
+  color: DimGray;
+} 
+
+.sectors {
+	text-transform: uppercase;
+	transform: var(--main-article-transform);
+	transition: var(--transition);
+	will-change: transform;
+  position: absolute;
+  float: center;
+  top: 250px;
+  left: 12.5%;
+  width: 50%;
+  z-index: 2;
+}
+
+details{
+  background: #fff;
+  color: DimGray;
+  width: 50%;
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  overflow:hidden;
+  margin-bottom: 20px; 
+}
+summary::-webkit-details-marker{display:none;}
+summary::-moz-list-bullet{list-style-type:none;}
+summary::marker{display:none;} 
+summary {
+   display:block;
+   padding: .3em 1em .3em .9em;
+   border-bottom: 1px solid #e2e8f0;
+   font-size:1.2em;
+   cursor: pointer;
+   position: relative;
+}
+summary:before {  
+  top: .4em;
+  right: .3em;
+  color: DimGray;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTYuNTkgOC41OUwxMiAxMy4xNyA3LjQxIDguNTkgNiAxMGw2IDYgNi02eiIvPjxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48L3N2Zz4=") no-repeat 50% 50% / 1em 1em;
+  width: 1em;
+  height: 1em;  
+  content: "";
+  position: absolute;
+  transition: transform .5s;
+}
+details[open] > summary:before {
+  transform: scale(1,-1);
+}
+summary ~ * {
+   padding: 0 1em 10px 1.4em;
+}
+details[open] summary ~ *{ 
+  animation: sweep .5s ease-in-out;
+}
+@keyframes sweep {
+  0%    {opacity: 0;}
+  100%  {opacity: 1;}
+}
+summary:focus {
+  outline:0;
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.3), inset 0 0 2px rgba(0,0,0,0.3);
+}
+
+
+.status-bars {
+  display: flex;
+  flex-direction: column; /* Изменяем направление оси на вертикальное */
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  float: center;
+  margin-bottom: 20px; /* Добавляем отступ между полосками */
+}
+
+
+.status-bar__label {
+  margin-bottom: 5px; /* Добавляем отступ между названием и полоской */
+}
+
+.status-bar {
+  height: 20px;
+  width: calc(90% - 10px);
+  background-color: #ccc;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  position: relative;
+  float: center;
+}
+
+.status-bar__inner {
+  height: 100%;
+  width: var(--percent);
+  animation: status-bar-progress var(--duration, 3s) ease-out forwards;
+  border-radius: 10px;
+}
+
+@keyframes status-bar-progress {
+  from { width: 0%; }
+  to { width: --percent; }
+}
+
+/* Example element */
+.example-element {
+  position: absolute;
+  /* Updated: */
+  top: 150px;
+  left: 150px;
+  z-index: 2;
+}
