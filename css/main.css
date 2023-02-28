@@ -111,7 +111,7 @@ body {
 }
 .main-article__paragraph {
 	max-width: calc(var(--index) * 30);
-	font-size: calc(var(--index) * .9);
+	font-size: calc(var(--index) * 1.0);
 	margin-top: calc(var(--index) / 1.25);
 	transform: var(--main-article-transform);
 	transition: var(--transition);
@@ -135,6 +135,9 @@ body {
 }
 
 .btn {
+  font-family: candara;
+
+  font-weight: bold;
   width: 300px;
   border: none;
   cursor: pointer;
@@ -151,7 +154,7 @@ body {
 }
 
 .btn-1 {
-  background-image: linear-gradient(45deg, #FFD700, #FFF700, #662d8c);
+  background-image: linear-gradient(45deg, #F4A460, #FF8C00, #800000);
 }
 
 .btn-2 {
