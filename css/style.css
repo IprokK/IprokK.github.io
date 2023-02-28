@@ -200,7 +200,7 @@ body {
 }
 
 .main-article2 {
-  --main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+
   height: 350px;
   background-size: cover;
   background-position: center;
@@ -367,7 +367,7 @@ summary:focus {
 .status-bar__inner {
   height: 100%;
   width: var(--percent);
-  animation: status-bar-progress var(--duration, 3s) ease-out forwards;
+  animation: status-bar-progress var(--duration, 8s) ease-out forwards;
   border-radius: 10px;
 }
 
@@ -383,4 +383,129 @@ summary:focus {
   top: 150px;
   left: 150px;
   z-index: 2;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  background: #101124;
+}
+
+::-webkit-scrollbar-track {
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, #FFD700, #FFF8DC);
+  border-radius: 5px;
+}
+
+.header {
+  --main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+  height: 75px;
+  background-size: cover;
+  background-position: center;
+  color: var(--text);
+  display: flex;
+  /* Updated: */
+  align-items: flex-start;
+  position: relative;
+  text-align: center;
+  /* Update: */
+  top: -1px;
+  z-index: 10;
+}
+
+nav ul li a:before, nav ul li:before, nav ul li:after {
+  content: '';
+  position: absolute;
+  height: 33.33%;
+  width: 0;
+  background-color: #FFFAFA;
+  transition: .4s ease;
+}
+
+.h-body {
+  --main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  position: relative;
+  padding: 4px 15px;
+  margin: 0 5px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav ul li a {
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 24px;
+  color: #696969;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-decoration: none;
+  padding: 10px 5px;
+  transition: .4s ease;
+  z-index: 1;
+}
+
+nav ul li a:before {
+  left: 0;
+  bottom: 66.66%;
+}
+
+nav ul li:before {
+  right: 0;
+  top: 33.33%;
+}
+
+nav ul li:after {
+  left: 0;
+  bottom: 0;
+}
+
+nav ul li:hover a {
+  text-shadow: 1px 1px 5px #000;
+}
+
+nav ul li:hover a:before {
+  width: 100%;
+}
+
+nav ul li:hover:before, nav ul li:hover:after {
+  width: 100%;
+}
+
+.footer {
+  --main-article-transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+  height: 40px;
+  background-size: cover;
+  background-position: center;
+  color: var(--text);
+  width: 100%;
+  /* Updated: */
+  align-items: center;
+  position: relative;
+  text-align: center;
+  /* Update: */
+  top: -1px;
+  z-index: 10;
+}
+.footer p{
+  color: #fff;
+  font-size: 20px;
 }
