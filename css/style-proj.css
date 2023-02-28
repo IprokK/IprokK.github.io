@@ -169,6 +169,7 @@ body {
   background-position: center;
   color: var(--text);
   display: flex;
+  font-weight: bold;
   /* Updated: */
   align-items: flex-start;
   position: relative;
@@ -183,7 +184,8 @@ nav ul li a:before, nav ul li:before, nav ul li:after {
   position: absolute;
   height: 33.33%;
   width: 0;
-  background-color: #FFFAFA;
+  background-color: #D2691E;
+  opacity: 0.3;
   transition: .4s ease;
 }
 
@@ -216,12 +218,13 @@ nav ul li {
 nav ul li a {
   font-family: 'Tomorrow', sans-serif;
   font-size: 24px;
-  color: #fff;
   text-transform: uppercase;
   letter-spacing: 3px;
   text-decoration: none;
   padding: 10px 5px;
+  text-shadow: 1px 1px 5px #000;
   transition: .4s ease;
+  color: #fff;
   z-index: 1;
 }
 
